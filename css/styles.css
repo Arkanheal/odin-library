@@ -1,0 +1,91 @@
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  padding-inline: .8em;
+  padding-block: .4em;
+
+  background-color: white;
+  border: 1px solid #555;
+  border-radius: .8em;
+  font-size: clamp(1rem, 1vw, 2.5rem);;
+}
+
+header {
+  padding: 0.5em;
+  background-color: #DEDEDE;
+  box-shadow: 0 3px 10px #BABABA;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #232323;
+  font-size: clamp(0.8rem, 6vw, 2.5rem);;
+}
+
+main {
+  background-color: #EFEFEF;
+  flex: 1;
+
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+}
+
+.option-wrapper {
+  display: flex;
+  gap: 1em;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: start;
+
+  padding: 1em;
+
+  border-left: 2px solid #555;
+}
+
+.new-book {
+  border-radius: 16px;
+  border: 2px solid #555;
+
+  padding-inline: 16px;
+  text-align: center;
+}
+
+.new-book::backdrop {
+  background-color: rgba(0, 0, 0, .35);
+}
+
+.new-book form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  text-align: start;
+}
+
+
+input[type=text], input[type=number] {
+  width: 90%;
+  padding-block: .5em;
+  padding-left: 1em;
+  border: 1px solid #ACACAC;
+  border-radius: 10px;
+  margin-top: 8px;
+}
+
+.read-check, .formSubmits {
+  align-self: center;
+}
