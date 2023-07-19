@@ -21,6 +21,21 @@ const formElmt = document.querySelector("#create-book");
 const cancelAddBtn = document.querySelector
 const bookWrapper = document.querySelector(".book-wrapper");
 
+function updateDataset(idx) {
+  const bookCards = document.querySelectorAll(".book-card");
+  for (let i = idx; i < bookCards.length; ++i) {
+    bookCards[i].dataset.index--;
+  }
+}
+
+function removeBook(event) {
+  const currBookCard = event.target.parentElement;
+  const currBookIndex = currBookCard.dataset.index;
+  myLibrary.splice(currBookIndex, 1);
+  updateDataset(currBookIndex + 1);
+  currBookCard.remove();
+}
+
 function displayBooks() {
   // Clear HTML
   bookWrapper.innerHTML = "";
@@ -30,6 +45,7 @@ function displayBooks() {
 
     const bookCard = document.createElement("div")
     bookCard.classList.add("book-card");
+    bookCard.dataset.index = i;
 
     const bookTitle = document.createElement("div")
     bookTitle.innerHTML = currentBook.title;
@@ -40,6 +56,10 @@ function displayBooks() {
     const bookPages = document.createElement("div")
     bookPages.innerHTML = `${currentBook.pages} pages`;
     bookPages.classList.add("book-pages");
+    const bookRemoveBtn = document.createElement("button");
+    bookRemoveBtn.innerHTML = "Remove";
+    bookRemoveBtn.classList.add("book-remove");
+    bookRemoveBtn.addEventListener("click", removeBook);
 
     if (currentBook.read === "on") {
       bookCard.classList.add("book-read");
@@ -50,6 +70,7 @@ function displayBooks() {
     bookCard.appendChild(bookTitle);
     bookCard.appendChild(bookAuthor);
     bookCard.appendChild(bookPages);
+    bookCard.appendChild(bookRemoveBtn);
 
     bookWrapper.appendChild(bookCard);
   }
