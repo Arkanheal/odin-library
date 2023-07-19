@@ -86,6 +86,51 @@ input[type=text], input[type=number] {
   margin-top: 8px;
 }
 
-.read-check, .formSubmits {
+.read-check, .form-submits {
   align-self: center;
+}
+
+.book-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1em;
+  align-content: flex-start;
+
+  padding: 1em
+}
+
+.book-card {
+  background-color: #CCC;
+  box-shadow: 3px 3px 3px #BABABA;
+  border: 1px solid #444;
+  border-radius: 1em;
+  height: clamp(100px, 15vh, 300px);
+
+  padding: 1em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-title {
+  font-size: clamp(1rem, 1vw, 2.5rem);
+  font-weight: bold;
+}
+
+.book-author {
+  font-size: clamp(.8rem, .8vw, 1.5rem);
+  font-weight: lighter;
+  font-style: italic;
+  flex: 1;
+}
+
+.book-pages {
+  font-size: clamp(.8rem, .8vw, 1.5rem);
+  font-style: italic;
+}
+
+.book-read {
+  border-color: green;
+  box-shadow: 3px 3px 3px #12de12;
 }

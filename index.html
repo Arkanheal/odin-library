@@ -22,7 +22,7 @@
   </main>
   <dialog class="new-book">
     <h2>Add a new book!</h2>
-    <form method="post">
+    <form method="dialog" id="create-book">
       <div>
         <label for="title">Title</label>
         <input id="title" type="text" name="title" required>
@@ -33,15 +33,15 @@
       </div>
       <div>
         <label for="pages">Number of pages</label>
-        <input id="pages" type="number" name="pages" min="1" max="8000" required>
+        <input id="pages" type="number" inputmode="numeric" name="pages" min="1" max="8000" required>
       </div>
       <div class="read-check">
         <label for="read">Read</label>
         <input id="read" type="checkbox" name="read" checked>
       </div>
-      <div class="formSubmits">
-        <button formmethod="dialog">Cancel</button>
-        <button id="confirmBook">Confirm</button>
+      <div class="form-submits">
+        <button value="cancel" formmethod="dialog" formnovalidate>Cancel</button>
+        <button id="confirm-book">Confirm</button>
       </div>
     </form>
   </dialog>
