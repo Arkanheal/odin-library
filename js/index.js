@@ -21,7 +21,6 @@ const addBtn = document.querySelector("#add-book");
 const clearBtn = document.querySelector("#clear-book");
 const dialog = document.querySelector(".new-book");
 const formElmt = document.querySelector("#create-book");
-const cancelAddBtn = document.querySelector
 const bookWrapper = document.querySelector(".book-wrapper");
 
 function updateDataset(idx) {
